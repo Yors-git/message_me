@@ -14,3 +14,4 @@ $('.message .close').on('click', function() {
     .transition('fade')
   ;
 });
+import "channels"
