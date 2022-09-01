@@ -10,6 +10,12 @@ consumer.subscriptions.create("ChatroomChannel", {
   },
 
   received(data) {
-    alert(data.foo)
+    const chatWindow = document.getElementById("message-container")
+    // let div = document.createElement("div")
+    // div.innerHTML = data.mod_message
+    // div.classList.add("event")
+    // console.log(div)
+    const html = document.createRange().createContextualFragment(data.mod_message)
+    chatWindow.append(html)
   }
 });
