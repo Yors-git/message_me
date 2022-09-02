@@ -12,11 +12,11 @@
         </div>
       </div>
       <div class="extra content">
-        <%= form_with(model: @message, html: {class: 'ui reply form', role: 'form'}, url: message_path, data: { turbo: true, remote: true }) do |form| %>
+        <%= form_with(model: @message, id: 'message_form', html: {class: 'ui reply form', role: 'form'}, url: message_path, data: { turbo: true }) do |form| %>
           <div class="field">
             <div class="ui fluid icon input">
               <%= form.text_field :body, placeholder: "Enter a message..." %>
-              <%= form.button '<i class="bordered inverted orange edit icon"></i>'.html_safe %>
+              <%= form.button '<i class="bordered inverted orange edit icon"></i>'.html_safe, id: 'msg_button'  %>
             </div>
           </div>
         <% end %>
